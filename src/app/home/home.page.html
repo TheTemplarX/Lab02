@@ -6,15 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-content padding>
+  <ion-list>
+  <ion-item *ngFor="let c of countries">
+  <ion-avatar slot="start">
+  <img src="{{c.flags.png}}">
+  </ion-avatar>
+  <ion-label>
+  <h2>{{c.name.official}}</h2>
+  <p>Capital: {{c.capital[0]}}, Region: {{c.region}}</p>
+  </ion-label>
+  </ion-item>
+  </ion-list>
+  </ion-content>
